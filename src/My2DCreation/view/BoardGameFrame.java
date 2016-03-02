@@ -21,7 +21,7 @@ public class BoardGameFrame extends JFrame
 	private void setUpFrame()
 	{
 		this.setSize(750, 300);
-		this.setContentPanel(basePanel);
+		this.setContentPane(basePanel);
 		this.setTitle("Array of different board games!");
 		this.setVisible(true);
 		
