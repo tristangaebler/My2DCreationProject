@@ -35,6 +35,13 @@ public class Boardgame
 		this.gameBoardName = gameBoardName;
 	}
 
+	public String toString()
+	{
+		String game = "The boardgame is " + gameBoardName + ", and it can play max" + maxPlayers + " players, and minimum " + minPlayers + " players. It's a " + typeOfBoardgame + " game";
+		
+		return game;
+	}
+	
 	public String getTypeOfBoardgame()
 	{
 		return typeOfBoardgame;
