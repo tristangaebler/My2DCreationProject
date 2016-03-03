@@ -35,7 +35,6 @@ public class BoardGamePanel extends JPanel
 		boardGame = new JLabel("BoardGame: ");
 		changeButton = new JButton("Change the current BoardGame");
 		displayButton = new JButton("Show the current BaordGame");
-		
 		//Calling helper method
 		setUpPanel();
 		setUpTable();
@@ -64,12 +63,25 @@ public class BoardGamePanel extends JPanel
 		String [] colHeader = {"Col 0", "Col 1", "Col 2"};
 		DefaultTableModel table = new DefaultTableModel(); //Change for arguments
 		gameBoardTable = new JTable(table);
-		
 	}
 	
 	private void setUpLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.NORTH, gameBoardTable, 50, SpringLayout.SOUTH, changeButton);
+		baseLayout.putConstraint(SpringLayout.WEST, gameBoardTable, 50, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, gameBoardTable, -50, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, col, 0, SpringLayout.WEST, displayButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, displayButton, -6, SpringLayout.NORTH, changeButton);
+		baseLayout.putConstraint(SpringLayout.EAST, displayButton, 0, SpringLayout.EAST, changeButton);
+		baseLayout.putConstraint(SpringLayout.WEST, changeButton, 126, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, changeButton, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, changeTable, 0, SpringLayout.NORTH, row);
+		baseLayout.putConstraint(SpringLayout.WEST, changeTable, 17, SpringLayout.EAST, col);
+		baseLayout.putConstraint(SpringLayout.NORTH, row, 55, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, col, 0, SpringLayout.NORTH, row);
+		baseLayout.putConstraint(SpringLayout.NORTH, boardGame, 3, SpringLayout.NORTH, changeTable);
+		baseLayout.putConstraint(SpringLayout.WEST, boardGame, 0, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, row, 68, SpringLayout.WEST, this);
 	}
 	
 	private void setUpListeners()
